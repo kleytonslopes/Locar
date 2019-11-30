@@ -1,16 +1,16 @@
 ﻿Public Class Car
-    Private _name As String
+    Private _make As String
     Private _model As String
     Private _color As String
     Private _year As Integer
     Private _licensePlate As String
 
-    Public Property Name As String
+    Public Property Make As String
         Get
-            Return _name
+            Return _make
         End Get
         Set(value As String)
-            _name = value
+            _make = value
         End Set
     End Property
     Public Property Model As String
