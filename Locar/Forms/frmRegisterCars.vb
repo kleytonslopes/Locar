@@ -17,7 +17,7 @@
                 MessageBox.Show("Veiculo cadastrado com Sucesso!", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ClearFields()
             Else
-                MessageBox.Show("Preencha os Campos Obrigatórios*", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Preencha os Campos Obrigatórios*", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             End If
         Catch ex As ArgumentException
             MessageBox.Show(ex.Message, "Locar - Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

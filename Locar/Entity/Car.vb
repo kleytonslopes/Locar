@@ -1,10 +1,21 @@
-﻿Public Class Car
+﻿Imports Locar
+
+Public Class Car
+    Private _id As Integer
     Private _make As String
     Private _model As String
     Private _color As String
     Private _year As Integer
     Private _licensePlate As String
 
+    Public Property Id As String
+        Get
+            Return _id
+        End Get
+        Set(value As String)
+            _id = value
+        End Set
+    End Property
     Public Property Make As String
         Get
             Return _make
@@ -45,4 +56,5 @@
             _licensePlate = value.ToUpper()
         End Set
     End Property
+
 End Class

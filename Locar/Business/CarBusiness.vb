@@ -85,4 +85,13 @@ Public Class CarBusiness
 
         GetCarByLicensePlate = car
     End Function
+
+    Public Function SelectAllCars() As IEnumerable(Of Car)
+        Dim result As IEnumerable(Of Car)
+        Dim carDao As New CarDAO
+
+        result = carDao.SelectAllCars()
+
+        SelectAllCars = result
+    End Function
 End Class

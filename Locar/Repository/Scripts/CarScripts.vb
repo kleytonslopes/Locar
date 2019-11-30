@@ -33,5 +33,14 @@
     " FROM " & Table & " WHERE " &
     "  " & LicensePlate & " = @" & LicensePlate
 
+    Public Shared Property QuerySelectAllCars As String =
+    "SELECT " &
+    "  " & Id & " AS Id" &
+    ", " & Make & " AS Make" &
+    ", " & Model & " AS Model" &
+    ", " & Color & " AS Color" &
+    ", " & Year & " AS Year" &
+    ", " & LicensePlate & " AS LicensePlate" &
+    " FROM " & Table
 End Class
 

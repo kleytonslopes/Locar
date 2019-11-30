@@ -21,7 +21,7 @@ Public Class CarDAO
 
     End Sub
 
-    Friend Function SelectCarByLicensePlate(licensePlate As String) As Car
+    Public Function SelectCarByLicensePlate(licensePlate As String) As Car
         Dim car As Car
         Dim sql As String = CarScripts.QuerySelectByLicensePlate
 
@@ -35,5 +35,16 @@ Public Class CarDAO
 
         SelectCarByLicensePlate = car
 
+    End Function
+
+    Friend Function SelectAllCars() As IEnumerable(Of Car)
+        Dim result As IEnumerable(Of Car)
+        Dim sql As String = CarScripts.QuerySelectAllCars
+
+        Using conFactory As New ConnectionFactory()
+            result = conFactory.SelectList(Of Car)(sql, Nothing)
+        End Using
+
+        SelectAllCars = result
     End Function
 End Class

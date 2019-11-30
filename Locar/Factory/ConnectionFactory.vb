@@ -29,11 +29,19 @@ Public Class ConnectionFactory
         connection.Execute(query, parameters)
     End Sub
 
-    Friend Function SelectFirst(Of T)(sql As String, parameters As Object) As T
+    Public Function SelectFirst(Of T)(sql As String, parameters As Object) As T
         Dim result As T
 
         result = connection.QueryFirstOrDefault(Of T)(sql, parameters)
 
         SelectFirst = result
+    End Function
+
+    Public Function SelectList(Of T)(sql As String, parameters As Object) As IEnumerable(Of T)
+        Dim result As IEnumerable(Of T)
+
+        result = connection.Query(Of T)(sql, parameters)
+
+        SelectList = result
     End Function
 End Class

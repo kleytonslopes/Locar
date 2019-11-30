@@ -25,6 +25,7 @@ Partial Class MainWindow
         Me.mnuMenu = New System.Windows.Forms.MenuStrip()
         Me.mnuRegisters = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRegisterCars = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuRegisterCarRentals = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMenu.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -39,7 +40,7 @@ Partial Class MainWindow
         '
         'mnuRegisters
         '
-        Me.mnuRegisters.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuRegisterCars})
+        Me.mnuRegisters.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuRegisterCars, Me.mnuRegisterCarRentals})
         Me.mnuRegisters.Name = "mnuRegisters"
         Me.mnuRegisters.Size = New System.Drawing.Size(66, 20)
         Me.mnuRegisters.Text = "Cadastro"
@@ -49,6 +50,12 @@ Partial Class MainWindow
         Me.mnuRegisterCars.Name = "mnuRegisterCars"
         Me.mnuRegisterCars.Size = New System.Drawing.Size(180, 22)
         Me.mnuRegisterCars.Text = "Carros"
+        '
+        'mnuRegisterCarRentals
+        '
+        Me.mnuRegisterCarRentals.Name = "mnuRegisterCarRentals"
+        Me.mnuRegisterCarRentals.Size = New System.Drawing.Size(180, 22)
+        Me.mnuRegisterCarRentals.Text = "Locações"
         '
         'MainWindow
         '
@@ -72,4 +79,5 @@ Partial Class MainWindow
     Friend WithEvents mnuMenu As MenuStrip
     Friend WithEvents mnuRegisters As ToolStripMenuItem
     Friend WithEvents mnuRegisterCars As ToolStripMenuItem
+    Friend WithEvents mnuRegisterCarRentals As ToolStripMenuItem
 End Class

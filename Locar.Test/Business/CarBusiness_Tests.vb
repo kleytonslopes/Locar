@@ -22,7 +22,7 @@
         carBusiness.RegisterCar("mMake", "nModel", "cColor", "99", licensePlate)
     End Sub
 
-    <TestMethod()> Public Sub SelectCarByLicensePlate()
+    <TestMethod()> Public Sub SelectCarByLicensePlate_Test()
         Dim car As New Car
         Dim carBusiness As New CarBusiness
         Dim licensePlate As String = DateTime.Now.ToString("MMddHHmmss")
@@ -39,4 +39,13 @@
 
     End Sub
 
+    <TestMethod()> Public Sub SelectAllCar_Test()
+        Dim carBusiness As New CarBusiness
+        Dim result As IEnumerable(Of Car)
+
+        result = carBusiness.SelectAllCars()
+
+        Assert.IsNotNull(result)
+        Assert.IsTrue(result.Count > 1)
+    End Sub
 End Class
