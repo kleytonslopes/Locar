@@ -26,12 +26,14 @@ Partial Class MainWindow
         Me.mnuRegisters = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRegisterCars = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuRegisterCarRentals = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuPrint = New System.Windows.Forms.ToolStripMenuItem()
+        Me.mnuReportRentalsPrint = New System.Windows.Forms.ToolStripMenuItem()
         Me.mnuMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'mnuMenu
         '
-        Me.mnuMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuRegisters})
+        Me.mnuMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuRegisters, Me.mnuPrint})
         Me.mnuMenu.Location = New System.Drawing.Point(0, 0)
         Me.mnuMenu.Name = "mnuMenu"
         Me.mnuMenu.Size = New System.Drawing.Size(800, 24)
@@ -48,14 +50,27 @@ Partial Class MainWindow
         'mnuRegisterCars
         '
         Me.mnuRegisterCars.Name = "mnuRegisterCars"
-        Me.mnuRegisterCars.Size = New System.Drawing.Size(180, 22)
+        Me.mnuRegisterCars.Size = New System.Drawing.Size(123, 22)
         Me.mnuRegisterCars.Text = "Carros"
         '
         'mnuRegisterCarRentals
         '
         Me.mnuRegisterCarRentals.Name = "mnuRegisterCarRentals"
-        Me.mnuRegisterCarRentals.Size = New System.Drawing.Size(180, 22)
+        Me.mnuRegisterCarRentals.Size = New System.Drawing.Size(123, 22)
         Me.mnuRegisterCarRentals.Text = "Locações"
+        '
+        'mnuPrint
+        '
+        Me.mnuPrint.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.mnuReportRentalsPrint})
+        Me.mnuPrint.Name = "mnuPrint"
+        Me.mnuPrint.Size = New System.Drawing.Size(65, 20)
+        Me.mnuPrint.Text = "Imprimir"
+        '
+        'mnuReportRentalsPrint
+        '
+        Me.mnuReportRentalsPrint.Name = "mnuReportRentalsPrint"
+        Me.mnuReportRentalsPrint.Size = New System.Drawing.Size(189, 22)
+        Me.mnuReportRentalsPrint.Text = "Relatório de Locações"
         '
         'MainWindow
         '
@@ -80,4 +95,6 @@ Partial Class MainWindow
     Friend WithEvents mnuRegisters As ToolStripMenuItem
     Friend WithEvents mnuRegisterCars As ToolStripMenuItem
     Friend WithEvents mnuRegisterCarRentals As ToolStripMenuItem
+    Friend WithEvents mnuPrint As ToolStripMenuItem
+    Friend WithEvents mnuReportRentalsPrint As ToolStripMenuItem
 End Class

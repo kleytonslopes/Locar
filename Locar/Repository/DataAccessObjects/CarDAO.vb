@@ -1,5 +1,4 @@
-﻿Option Strict Off
-Imports Locar
+﻿Imports Locar
 
 Public Class CarDAO
     Public Sub InsertCar(ByVal Car As Car)

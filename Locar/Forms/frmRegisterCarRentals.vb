@@ -66,11 +66,11 @@ Public Class frmRegisterCarRentals
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
             Dim carRentalsBusiness As CarRentalsBusiness
-            Dim StartDate = dtpStart.Value
-            Dim DueDate = dtpDue.Value
+            Dim StartDate = dtpStart.Value.Date
+            Dim DueDate = dtpDue.Value.Date
 
-            If DueDate < StartDate Then
-                MessageBox.Show("A data de entrega não pode ser menor ou igual a atual!", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            If DueDate <= StartDate Then
+                MessageBox.Show("A data de entrega não pode ser menor ou igual a data de Retirada!", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Return
             End If
 

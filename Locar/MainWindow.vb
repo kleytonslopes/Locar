@@ -8,4 +8,9 @@
         frmRegisterCarRentals.MdiParent = Me
         frmRegisterCarRentals.Show()
     End Sub
+
+    Private Sub mnuReportRentalsPrint_Click(sender As Object, e As EventArgs) Handles mnuReportRentalsPrint.Click
+        frmCarRentalsReport.MdiParent = Me
+        frmCarRentalsReport.Show()
+    End Sub
 End Class
