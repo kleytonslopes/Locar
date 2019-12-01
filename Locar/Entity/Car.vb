@@ -7,6 +7,7 @@ Public Class Car
     Private _color As String
     Private _year As Integer
     Private _licensePlate As String
+    Private _price As Decimal
 
     Public Property Id As String
         Get
@@ -56,5 +57,12 @@ Public Class Car
             _licensePlate = value.ToUpper()
         End Set
     End Property
-
+    Public Property Price As Decimal
+        Get
+            Return _price
+        End Get
+        Set(value As Decimal)
+            _price = value
+        End Set
+    End Property
 End Class

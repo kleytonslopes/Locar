@@ -13,7 +13,7 @@
             FillInputs()
 
             If IsValidInputs() Then
-                carBusiness.RegisterCar(make, model, color, year, licensePlate)
+                carBusiness.RegisterCar(make, model, color, year, licensePlate, "0")
                 MessageBox.Show("Veiculo cadastrado com Sucesso!", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ClearFields()
             Else

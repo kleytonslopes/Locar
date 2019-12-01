@@ -8,7 +8,7 @@ Public Class frmRegisterCarRentals
         Dim carBusiness As New CarBusiness
         Dim currentCar As Car
 
-        Cars = carBusiness.SelectAllCars()
+        Cars = carBusiness.SelectAllCarsAvailable()
 
         If Cars IsNot Nothing AndAlso Cars.Any() Then
             lstCars.Items.Clear()

@@ -9,7 +9,8 @@ Public Class CarDAO
             .CAR_MODEL = Car.Model,
             .CAR_COLOR = Car.Color,
             .CAR_YEAR = Car.Year,
-            .CAR_LICENSE_PLATE = Car.LicensePlate
+            .CAR_LICENSE_PLATE = Car.LicensePlate,
+            .CAR_PRICE = Car.Price
         }
 
         Using conFactory As New ConnectionFactory()
@@ -45,5 +46,27 @@ Public Class CarDAO
         End Using
 
         SelectAllCars = result
+    End Function
+
+    Friend Function SelectAllCarsAvailable() As IEnumerable(Of Car)
+        Dim result As IEnumerable(Of Car)
+        Dim sql As String = CarScripts.QuerySelectAllCarsAvailable
+
+        Using conFactory As New ConnectionFactory()
+            result = conFactory.SelectList(Of Car)(sql, Nothing)
+        End Using
+
+        SelectAllCarsAvailable = result
+    End Function
+
+    Friend Function SelectAllCarsRented() As IEnumerable(Of Car)
+        Dim result As IEnumerable(Of Car)
+        Dim sql As String = CarScripts.QuerySelectAllCarsRented
+
+        Using conFactory As New ConnectionFactory()
+            result = conFactory.SelectList(Of Car)(sql, Nothing)
+        End Using
+
+        SelectAllCarsRented = result
     End Function
 End Class

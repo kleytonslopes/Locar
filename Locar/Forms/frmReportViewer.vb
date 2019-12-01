@@ -6,14 +6,18 @@ Public Class frmReportViewer
 
     Public Sub SetReport(ByVal report As ReportClass)
         reportClass = report
+        crvReport.ReportSource = reportClass
     End Sub
 
     Public Sub SetDataSource(Of T)(ByVal data As T)
         dataSoucer = data
+        reportClass.SetDataSource(dataSoucer)
     End Sub
 
-    Private Sub frmReportViewer_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        reportClass.SetDataSource(dataSoucer)
-        crvReport.ReportSource = reportClass
+    Public Sub SetParameterValue(ByVal name As String, ByVal value As String)
+        crvReport.Refresh()
+        reportClass.SetParameterValue(name, value)
+        crvReport.Refresh()
     End Sub
+
 End Class

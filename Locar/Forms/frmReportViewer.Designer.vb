@@ -33,6 +33,8 @@ Partial Class frmReportViewer
         Me.crvReport.Dock = System.Windows.Forms.DockStyle.Fill
         Me.crvReport.Location = New System.Drawing.Point(0, 0)
         Me.crvReport.Name = "crvReport"
+        Me.crvReport.ReuseParameterValuesOnRefresh = True
+        Me.crvReport.ShowParameterPanelButton = False
         Me.crvReport.Size = New System.Drawing.Size(1284, 509)
         Me.crvReport.TabIndex = 0
         '

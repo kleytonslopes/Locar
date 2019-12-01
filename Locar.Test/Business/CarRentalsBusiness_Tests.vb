@@ -17,7 +17,7 @@
         Dim carBusiness As New CarBusiness
         Dim licensePlate As String = DateTime.Now.ToString("yyddhhssff")
 
-        carBusiness.RegisterCar("mMake", "nModel", "cColor", "99", licensePlate)
+        carBusiness.RegisterCar("mMake", "nModel", "cColor", "99", licensePlate, "68")
 
         carRentalsBusiness.RegisterCarRentals(licensePlate, DateTime.Now.Date, DateTime.Now.AddDays(5).Date)
     End Sub
@@ -28,7 +28,7 @@
         Dim licensePlate As String = DateTime.Now.ToString("yyddhhssff")
         Dim result As IEnumerable(Of CarRentals)
 
-        carBusiness.RegisterCar("mMake", "nModel", "cColor", "99", licensePlate)
+        carBusiness.RegisterCar("mMake", "nModel", "cColor", "99", licensePlate, "51")
 
         carRentalsBusiness.RegisterCarRentals(licensePlate, DateTime.Now.Date, DateTime.Now.AddDays(5).Date)
         carRentalsBusiness.RegisterCarRentals(licensePlate, DateTime.Now.Date.AddDays(10), DateTime.Now.AddDays(15).Date)

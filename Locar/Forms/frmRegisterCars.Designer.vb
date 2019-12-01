@@ -25,15 +25,17 @@ Partial Class frmRegisterCars
         Me.txtModel = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.cboMake = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtColor = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtYear = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtLicensePlate = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txtYear = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtColor = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.cboMake = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -56,6 +58,8 @@ Partial Class frmRegisterCars
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtLicensePlate)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -72,59 +76,6 @@ Partial Class frmRegisterCars
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informações"
-        '
-        'cboMake
-        '
-        Me.cboMake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboMake.FormattingEnabled = True
-        Me.cboMake.Items.AddRange(New Object() {"Fiat", "Toyota", "Volkswagen", "Ford", "Nissan"})
-        Me.cboMake.Location = New System.Drawing.Point(14, 35)
-        Me.cboMake.Name = "cboMake"
-        Me.cboMake.Size = New System.Drawing.Size(139, 21)
-        Me.cboMake.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(156, 19)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Modelo*:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(11, 59)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(30, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Cor*:"
-        '
-        'txtColor
-        '
-        Me.txtColor.Location = New System.Drawing.Point(14, 75)
-        Me.txtColor.MaxLength = 50
-        Me.txtColor.Name = "txtColor"
-        Me.txtColor.Size = New System.Drawing.Size(139, 20)
-        Me.txtColor.TabIndex = 3
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(156, 59)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(33, 13)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Ano*:"
-        '
-        'txtYear
-        '
-        Me.txtYear.Location = New System.Drawing.Point(159, 75)
-        Me.txtYear.MaxLength = 4
-        Me.txtYear.Name = "txtYear"
-        Me.txtYear.Size = New System.Drawing.Size(139, 20)
-        Me.txtYear.TabIndex = 4
         '
         'Label5
         '
@@ -144,6 +95,59 @@ Partial Class frmRegisterCars
         Me.txtLicensePlate.Size = New System.Drawing.Size(139, 20)
         Me.txtLicensePlate.TabIndex = 5
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(156, 59)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(33, 13)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Ano*:"
+        '
+        'txtYear
+        '
+        Me.txtYear.Location = New System.Drawing.Point(159, 75)
+        Me.txtYear.MaxLength = 4
+        Me.txtYear.Name = "txtYear"
+        Me.txtYear.Size = New System.Drawing.Size(139, 20)
+        Me.txtYear.TabIndex = 4
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(11, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(30, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Cor*:"
+        '
+        'txtColor
+        '
+        Me.txtColor.Location = New System.Drawing.Point(14, 75)
+        Me.txtColor.MaxLength = 50
+        Me.txtColor.Name = "txtColor"
+        Me.txtColor.Size = New System.Drawing.Size(139, 20)
+        Me.txtColor.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(156, 19)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Modelo*:"
+        '
+        'cboMake
+        '
+        Me.cboMake.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMake.FormattingEnabled = True
+        Me.cboMake.Items.AddRange(New Object() {"Fiat", "Toyota", "Volkswagen", "Ford", "Nissan"})
+        Me.cboMake.Location = New System.Drawing.Point(14, 35)
+        Me.cboMake.Name = "cboMake"
+        Me.cboMake.Size = New System.Drawing.Size(139, 21)
+        Me.cboMake.TabIndex = 1
+        '
         'btnSave
         '
         Me.btnSave.Location = New System.Drawing.Point(26, 169)
@@ -152,6 +156,24 @@ Partial Class frmRegisterCars
         Me.btnSave.TabIndex = 6
         Me.btnSave.Text = "Salvar"
         Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(156, 98)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(41, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Placa*:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TextBox1.Location = New System.Drawing.Point(159, 114)
+        Me.TextBox1.MaxLength = 10
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(139, 20)
+        Me.TextBox1.TabIndex = 10
         '
         'frmRegisterCars
         '
@@ -184,4 +206,6 @@ Partial Class frmRegisterCars
     Friend WithEvents txtColor As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSave As Button
+    Friend WithEvents Label6 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

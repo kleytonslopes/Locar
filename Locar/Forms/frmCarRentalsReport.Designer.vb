@@ -23,6 +23,7 @@ Partial Class frmCarRentalsReport
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.chkReportFull = New System.Windows.Forms.CheckBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dtpDue = New System.Windows.Forms.DateTimePicker()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -33,16 +34,27 @@ Partial Class frmCarRentalsReport
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.chkReportFull)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.dtpDue)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.dtpStart)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(314, 71)
+        Me.GroupBox1.Size = New System.Drawing.Size(314, 92)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtros"
+        '
+        'chkReportFull
+        '
+        Me.chkReportFull.AutoSize = True
+        Me.chkReportFull.Location = New System.Drawing.Point(14, 61)
+        Me.chkReportFull.Name = "chkReportFull"
+        Me.chkReportFull.Size = New System.Drawing.Size(70, 17)
+        Me.chkReportFull.TabIndex = 22
+        Me.chkReportFull.Text = "Completo"
+        Me.chkReportFull.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -80,7 +92,7 @@ Partial Class frmCarRentalsReport
         '
         'btnCreateReport
         '
-        Me.btnCreateReport.Location = New System.Drawing.Point(206, 89)
+        Me.btnCreateReport.Location = New System.Drawing.Point(26, 110)
         Me.btnCreateReport.Name = "btnCreateReport"
         Me.btnCreateReport.Size = New System.Drawing.Size(104, 23)
         Me.btnCreateReport.TabIndex = 1
@@ -92,7 +104,7 @@ Partial Class frmCarRentalsReport
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(341, 124)
+        Me.ClientSize = New System.Drawing.Size(341, 158)
         Me.Controls.Add(Me.btnCreateReport)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -112,4 +124,5 @@ Partial Class frmCarRentalsReport
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpStart As DateTimePicker
     Friend WithEvents btnCreateReport As Button
+    Friend WithEvents chkReportFull As CheckBox
 End Class

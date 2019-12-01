@@ -6,6 +6,7 @@
     Private _licensePlate As String
     Private _startDate As DateTime
     Private _dueDate As DateTime
+    Private _price As Decimal
 
     Public Property Make As String
         Get
@@ -63,4 +64,51 @@
             _dueDate = CDate(value)
         End Set
     End Property
+    Public Property Price As String
+        Get
+            Return _price.ToString("0.00")
+        End Get
+        Set(value As String)
+            _price = CDec(value)
+        End Set
+    End Property
+    Public Property TotalPrice As String
+        Get
+            Return (_price * GetTotalDays()).ToString("0.00")
+        End Get
+        Private Set(value As String)
+
+        End Set
+    End Property
+
+    Public Property RentalsStatus() As String
+        Get
+            Dim startDate As DateTime = _startDate
+            Dim dueDate As DateTime = _dueDate
+            Dim dateNow As DateTime
+            Dim result As String
+            dateNow = DateTime.Now.Date
+
+            If startDate < dateNow AndAlso dueDate < dateNow Then
+                result = "Disponível"
+            Else
+                result = "Indisponível"
+            End If
+
+            Return result
+        End Get
+        Private Set(value As String)
+
+        End Set
+    End Property
+
+    Public Function GetTotalDays() As Integer
+        Dim startDate As DateTime = _startDate
+        Dim dueDate As DateTime = _dueDate
+
+        Dim days As Integer
+        days = (dueDate - startDate).Days
+        GetTotalDays = days
+    End Function
 End Class
+

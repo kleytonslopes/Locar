@@ -1,4 +1,6 @@
-﻿Public Class CarRentalsReportBusiness
+﻿Imports Locar
+
+Public Class CarRentalsReportBusiness
     Public Function CreateReportByFilters(ByVal startDate As DateTime, ByVal dueDate As DateTime) As IEnumerable(Of CarRentalsReport)
         Dim result As List(Of CarRentalsReport)
         Dim carRentalsReportDAO As New CarRentalsReportDAO()
@@ -10,5 +12,14 @@
         result = carRentalsReportDAO.SelectCarRentalsReportByDateRange(startDate, dueDate)
 
         CreateReportByFilters = result
+    End Function
+
+    Friend Function CreateReportFull() As List(Of CarRentalsReport)
+        Dim result As List(Of CarRentalsReport)
+        Dim carRentalsReportDAO As New CarRentalsReportDAO()
+
+        result = carRentalsReportDAO.SelectCarRentalsReport()
+
+        CreateReportFull = result
     End Function
 End Class
