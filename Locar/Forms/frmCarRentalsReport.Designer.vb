@@ -49,6 +49,8 @@ Partial Class frmCarRentalsReport
         'chkReportFull
         '
         Me.chkReportFull.AutoSize = True
+        Me.chkReportFull.Checked = True
+        Me.chkReportFull.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkReportFull.Location = New System.Drawing.Point(14, 61)
         Me.chkReportFull.Name = "chkReportFull"
         Me.chkReportFull.Size = New System.Drawing.Size(70, 17)

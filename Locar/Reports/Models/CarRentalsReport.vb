@@ -50,6 +50,9 @@
     End Property
     Public Property StartDate As String
         Get
+            If _startDate = New DateTime(1900, 1, 1) Then
+                Return ""
+            End If
             Return _startDate.ToString("dd/MM/yyyy")
         End Get
         Set(value As String)
@@ -58,6 +61,9 @@
     End Property
     Public Property DueDate As String
         Get
+            If _dueDate = New DateTime(1900, 1, 1) Then
+                Return ""
+            End If
             Return _dueDate.ToString("dd/MM/yyyy")
         End Get
         Set(value As String)

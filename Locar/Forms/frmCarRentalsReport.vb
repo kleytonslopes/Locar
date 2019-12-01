@@ -1,4 +1,6 @@
-﻿Public Class frmCarRentalsReport
+﻿Imports Locar
+
+Public Class frmCarRentalsReport
     Private Sub frmCarRentalsReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         dtpDue.Value = DateTime.Now.Date.AddDays(1)
     End Sub
@@ -59,5 +61,10 @@
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Locar - Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub chkReportFull_CheckedChanged(sender As Object, e As EventArgs) Handles chkReportFull.CheckedChanged
+        dtpDue.Enabled = Not chkReportFull.Checked
+        dtpStart.Enabled = Not chkReportFull.Checked
     End Sub
 End Class

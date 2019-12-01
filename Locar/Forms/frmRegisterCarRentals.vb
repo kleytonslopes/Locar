@@ -5,18 +5,7 @@ Public Class frmRegisterCarRentals
     Private selectedCar As Car
 
     Private Sub frmRegisterCarRentals_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim carBusiness As New CarBusiness
-        Dim currentCar As Car
-
-        Cars = carBusiness.SelectAllCarsAvailable()
-
-        If Cars IsNot Nothing AndAlso Cars.Any() Then
-            lstCars.Items.Clear()
-
-            For Each car As Car In Cars
-                lstCars.Items.Add(CreateItem(car))
-            Next
-        End If
+        LoadVehicleAvailableList()
     End Sub
 
     Private Function CreateItem(car As Car) As ListViewItem
@@ -46,6 +35,7 @@ Public Class frmRegisterCarRentals
         txtMake.Text = selectedCar.Make
         txtModel.Text = selectedCar.Model
         txtYear.Text = selectedCar.Year.ToString()
+        txtPrice.Text = selectedCar.Price.ToString("0.00")
     End Sub
 
     Private Sub ClearFields()
@@ -57,6 +47,7 @@ Public Class frmRegisterCarRentals
         txtMake.Text = String.Empty
         txtModel.Text = String.Empty
         txtYear.Text = String.Empty
+        txtPrice.Text = String.Empty
 
         dtpStart.Value = DateTime.Now.Date
         dtpDue.Value = DateTime.Now.Date
@@ -81,7 +72,7 @@ Public Class frmRegisterCarRentals
 
             carRentalsBusiness = New CarRentalsBusiness()
             carRentalsBusiness.RegisterCarRentals(selectedCar.LicensePlate, StartDate, DueDate)
-
+            LoadVehicleAvailableList()
             MessageBox.Show("Locação cadastrada com Sucesso!", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
             ClearFields()
 
@@ -89,5 +80,19 @@ Public Class frmRegisterCarRentals
             MessageBox.Show(ex.Message, "Locar - Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
 
+    End Sub
+
+    Private Sub LoadVehicleAvailableList()
+        Dim carBusiness As New CarBusiness
+
+        Cars = carBusiness.SelectAllCarsAvailable()
+
+        If Cars IsNot Nothing AndAlso Cars.Any() Then
+            lstCars.Items.Clear()
+
+            For Each car As Car In Cars
+                lstCars.Items.Add(CreateItem(car))
+            Next
+        End If
     End Sub
 End Class

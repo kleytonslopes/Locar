@@ -5,6 +5,7 @@
     Private color As String
     Private year As String
     Private licensePlate As String
+    Private price As String
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Try
@@ -13,7 +14,7 @@
             FillInputs()
 
             If IsValidInputs() Then
-                carBusiness.RegisterCar(make, model, color, year, licensePlate, "0")
+                carBusiness.RegisterCar(make, model, color, year, licensePlate, txtPrice.Text)
                 MessageBox.Show("Veiculo cadastrado com Sucesso!", "Locar - Informação", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ClearFields()
             Else
@@ -33,6 +34,7 @@
         color = txtColor.Text
         year = txtYear.Text
         licensePlate = txtLicensePlate.Text
+        price = txtPrice.Text
     End Sub
 
     Private Function IsValidInputs() As Boolean
@@ -58,6 +60,10 @@
             isValid = False
         End If
 
+        If String.IsNullOrWhiteSpace(price) Then
+            isValid = False
+        End If
+
         IsValidInputs = isValid
     End Function
 
@@ -78,6 +84,8 @@
         licensePlate = String.Empty
         txtLicensePlate.Text = String.Empty
 
+        price = String.Empty
+        txtPrice.Text = String.Empty
     End Sub
 
     Private Sub txtYear_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtYear.KeyPress

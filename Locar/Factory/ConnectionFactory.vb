@@ -21,7 +21,7 @@ Public Class ConnectionFactory
     Public Sub New()
         Dim localPath As String
         localPath = Directory.GetCurrentDirectory()
-        connection = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\repos\Locar\Locar\database.mdf;Integrated Security=True") 'New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & localPath & "\database.mdf;Integrated Security=True")
+        connection = New SqlConnection("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" & localPath & "\database.mdf;Integrated Security=True")
         connection.Open()
     End Sub
 

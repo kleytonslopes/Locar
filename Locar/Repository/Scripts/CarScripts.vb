@@ -47,11 +47,11 @@
     WHERE 
         CA.CAR_ID NOT IN (                     
             SELECT 
-                DISTINCT (CR.CARRENT_CAR_ID)   
+                CR.CARRENT_CAR_ID  
             FROM 
                 T_CAR_RENTALS CR   
             WHERE 
-                (CR.CARRENT_START_DATE < @DateNow AND CR.CARRENT_DUE_DATE < @DateNow) 
+                (CR.CARRENT_START_DATE <= @DateNow AND CR.CARRENT_DUE_DATE >= @DateNow) 
              OR (CR.CARRENT_START_DATE IS NULL)
     )"
 
@@ -72,12 +72,11 @@
     WHERE 
         CA.CAR_ID IN (                     
             SELECT 
-                DISTINCT (CR.CARRENT_CAR_ID)   
+                CR.CARRENT_CAR_ID
             FROM 
                 T_CAR_RENTALS CR   
             WHERE 
-                (CR.CARRENT_START_DATE < @DateNow AND CR.CARRENT_DUE_DATE < @DateNow) 
-             OR (CR.CARRENT_START_DATE IS NULL)
+                (CR.CARRENT_START_DATE <= @DateNow AND CR.CARRENT_DUE_DATE >= @DateNow) 
     )"
 
     Public Shared Property QuerySelectAllCars As String =

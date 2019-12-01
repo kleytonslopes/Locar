@@ -54,7 +54,7 @@ Public Class CarBusiness
         End If
 
         If Not isValidPrice Then
-            Throw New ArgumentException("Formato do preço do veículo esta inválido!")
+            Throw New ArgumentException("Valor da diária do veículo esta inválida!")
         End If
 
         If Not isValidYear Then

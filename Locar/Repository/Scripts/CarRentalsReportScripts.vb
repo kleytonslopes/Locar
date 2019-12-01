@@ -1,6 +1,6 @@
 ﻿NotInheritable Class CarRentalsReportScripts
     Public Shared QuerySelectAll As String =
-    "SELECT
+    "SELECT 
            CARRENT_ID         AS CarRentalsId
          , CAR_ID             AS CarId
          , CARRENT_START_DATE AS StartDate
@@ -11,8 +11,9 @@
          , CAR_YEAR           AS Year
          , CAR_LICENSE_PLATE  AS LicensePlate
          , CAR_PRICE          AS Price
-    FROM 
-         vw_CarRentalsReport"
+     FROM 
+         vw_CarRentalsReportField
+    "
 
     Public Shared QuerySelectByDateRange As String =
     "SELECT 
@@ -27,7 +28,7 @@
          , CAR_LICENSE_PLATE  AS LicensePlate
          , CAR_PRICE          AS Price
      FROM 
-         vw_CarRentalsReport
+         vw_CarRentalsReportField
      WHERE 
          CARRENT_START_DATE >= @CARRENT_START_DATE
      AND CARRENT_DUE_DATE <= @CARRENT_DUE_DATE"

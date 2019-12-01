@@ -25,6 +25,8 @@ Partial Class frmRegisterCars
         Me.txtModel = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtLicensePlate = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -34,8 +36,6 @@ Partial Class frmRegisterCars
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cboMake = New System.Windows.Forms.ComboBox()
         Me.btnSave = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -59,7 +59,7 @@ Partial Class frmRegisterCars
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txtPrice)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtLicensePlate)
         Me.GroupBox1.Controls.Add(Me.Label4)
@@ -76,6 +76,24 @@ Partial Class frmRegisterCars
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Informações"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(156, 98)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(68, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Valor Diário*:"
+        '
+        'txtPrice
+        '
+        Me.txtPrice.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtPrice.Location = New System.Drawing.Point(159, 114)
+        Me.txtPrice.MaxLength = 10
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(139, 20)
+        Me.txtPrice.TabIndex = 10
         '
         'Label5
         '
@@ -157,24 +175,6 @@ Partial Class frmRegisterCars
         Me.btnSave.Text = "Salvar"
         Me.btnSave.UseVisualStyleBackColor = True
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(156, 98)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(41, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Placa*:"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TextBox1.Location = New System.Drawing.Point(159, 114)
-        Me.TextBox1.MaxLength = 10
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(139, 20)
-        Me.TextBox1.TabIndex = 10
-        '
         'frmRegisterCars
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -207,5 +207,5 @@ Partial Class frmRegisterCars
     Friend WithEvents Label2 As Label
     Friend WithEvents btnSave As Button
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtPrice As TextBox
 End Class

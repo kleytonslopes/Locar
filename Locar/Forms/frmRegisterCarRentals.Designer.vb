@@ -22,8 +22,6 @@ Partial Class frmRegisterCarRentals
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem5 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Teste")
-        Dim ListViewItem6 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem("Teste 2")
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.dtpDue = New System.Windows.Forms.DateTimePicker()
@@ -41,11 +39,15 @@ Partial Class frmRegisterCarRentals
         Me.txtMake = New System.Windows.Forms.TextBox()
         Me.lstCars = New System.Windows.Forms.ListView()
         Me.btnSave = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtPrice = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.txtPrice)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.dtpDue)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -194,7 +196,6 @@ Partial Class frmRegisterCarRentals
         'lstCars
         '
         Me.lstCars.HideSelection = False
-        Me.lstCars.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem5, ListViewItem6})
         Me.lstCars.Location = New System.Drawing.Point(12, 12)
         Me.lstCars.MultiSelect = False
         Me.lstCars.Name = "lstCars"
@@ -211,6 +212,24 @@ Partial Class frmRegisterCarRentals
         Me.btnSave.TabIndex = 3
         Me.btnSave.Text = "Salvar"
         Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(301, 58)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(64, 13)
+        Me.Label8.TabIndex = 19
+        Me.Label8.Text = "Valor Diário:"
+        '
+        'txtPrice
+        '
+        Me.txtPrice.Enabled = False
+        Me.txtPrice.Location = New System.Drawing.Point(304, 74)
+        Me.txtPrice.MaxLength = 150
+        Me.txtPrice.Name = "txtPrice"
+        Me.txtPrice.Size = New System.Drawing.Size(139, 20)
+        Me.txtPrice.TabIndex = 18
         '
         'frmRegisterCarRentals
         '
@@ -248,4 +267,6 @@ Partial Class frmRegisterCarRentals
     Friend WithEvents Label6 As Label
     Friend WithEvents dtpStart As DateTimePicker
     Friend WithEvents btnSave As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents txtPrice As TextBox
 End Class
